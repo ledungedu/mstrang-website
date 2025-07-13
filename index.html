@@ -9,18 +9,16 @@
       margin: 0;
       font-family: Arial, sans-serif;
     }
-    nav {
+   nav {
   background-color: #f8f8f8;
-  padding: 5px 20px;
+  padding: 5px 20px; /* Giảm số này nếu viền vẫn to, ví dụ 2px */
   display: flex;
   align-items: center;
-  height: 70px; /* Giới hạn chiều cao nav */
-  overflow: hidden;
+  min-height: 60px; /* Có thể thêm nếu cần giới hạn chiều cao */
 }
 
 nav img {
-  max-height: 160px; /* Co logo lại cho hợp lý */
-  height: auto;
+  height: 200px; /* Giảm tiếp nếu logo vẫn to */
 }
     nav ul {
       list-style: none;
