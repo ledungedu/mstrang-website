@@ -1,62 +1,122 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trung tâm Ms Trang</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Trung tâm Ngoại ngữ Ms Trang</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
+    body {
+      font-family: 'Quicksand', sans-serif;
+    }
+  </style>
 </head>
-<body class="font-sans text-gray-800">
+<body class="bg-white text-gray-800">
 
-  <!-- Header -->
-  <header class="flex items-center justify-between px-6 py-4 bg-white shadow">
-    <img src="logo.png" alt="Logo" class="h-12">
-    <nav class="space-x-6">
-      <a href="#" class="text-gray-700 font-medium hover:text-orange-600">Trang chủ</a>
-      <a href="#" class="text-gray-700 font-medium hover:text-orange-600">Chương trình</a>
-      <a href="#" class="text-gray-700 font-medium hover:text-orange-600">Liên hệ</a>
+  <!-- 🌟 Header -->
+  <header class="flex justify-between items-center px-6 py-4 shadow-md bg-white sticky top-0 z-50">
+    <img src="logo.png" alt="Logo Ms Trang" class="h-12">
+    <nav class="space-x-6 text-sm sm:text-base font-semibold">
+      <a href="#" class="hover:text-orange-500">Trang chủ</a>
+      <a href="#about" class="hover:text-orange-500">Giới thiệu</a>
+      <a href="#courses" class="hover:text-orange-500">Chương trình</a>
+      <a href="#contact" class="hover:text-orange-500">Liên hệ</a>
     </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section class="bg-orange-50 py-20 text-center">
-    <h1 class="text-4xl font-bold text-gray-900 mb-4">Chào mừng đến với Trung tâm Ngoại ngữ Ms Trang</h1>
-    <p class="text-lg mb-6">Đào tạo tiếng Anh chất lượng cao cho trẻ em và học sinh</p>
-    <a href="#" class="bg-orange-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-600">Xem chương trình học</a>
+  <!-- 🌈 Hero Section -->
+  <section class="bg-orange-100 py-20 text-center px-6">
+    <h1 class="text-4xl sm:text-5xl font-bold text-orange-600 mb-4">Hành trình học tiếng Anh bắt đầu từ đây</h1>
+    <p class="text-lg mb-6">Chúng tôi mang đến môi trường học vui vẻ, hiệu quả cho trẻ từ 4–15 tuổi</p>
+    <a href="#courses" class="inline-block bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition">Xem chương trình học</a>
   </section>
 
-  <!-- About -->
-  <section class="px-6 py-12 bg-white">
-    <h2 class="text-2xl font-semibold mb-4">Về chúng tôi</h2>
-    <p>Trung tâm Ngoại ngữ Ms Trang là đơn vị được cấp phép bởi Sở GD&ĐT Thái Nguyên, chuyên đào tạo tiếng Anh cho học sinh từ lớp 1 đến lớp 9. Chúng tôi cam kết chất lượng và đồng hành cùng sự tiến bộ của từng học viên.</p>
+  <!-- 🎓 Giới thiệu -->
+  <section id="about" class="py-16 px-6 max-w-5xl mx-auto">
+    <h2 class="text-3xl font-bold text-center text-orange-600 mb-6">Về Trung tâm Ms Trang</h2>
+    <p class="text-center text-gray-600 text-lg leading-relaxed">
+      Trung tâm Ngoại ngữ Ms Trang trực thuộc Công ty TNHH Lê Dũng Education – được Sở GD&ĐT tỉnh Thái Nguyên cấp phép hoạt động.
+      Chúng tôi tập trung vào chương trình tiếng Anh thực tiễn cho trẻ em, cam kết chất lượng và đồng hành với từng học sinh trong suốt quá trình học tập.
+    </p>
   </section>
 
-  <!-- Bộ 4 bước học -->
-  <section class="bg-gray-50 py-12 px-6">
-    <h2 class="text-2xl font-semibold text-center mb-10">Quy trình học tại trung tâm</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-      <div class="bg-white p-6 shadow rounded text-center">
-        <h3 class="font-bold text-lg mb-2">1. Đăng ký</h3>
-        <p>Phụ huynh đăng ký thông tin học viên tại trung tâm hoặc online.</p>
+  <!-- 🧒 Chương trình học -->
+  <section id="courses" class="bg-yellow-50 py-16 px-6">
+    <h2 class="text-3xl font-bold text-center mb-10 text-yellow-600">Chương trình học nổi bật</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-bold text-orange-500 mb-2">Tiếng Anh Mẫu Giáo</h3>
+        <p class="text-gray-600">Cho bé từ 4–6 tuổi, học qua trò chơi, âm nhạc và hình ảnh.</p>
       </div>
-      <div class="bg-white p-6 shadow rounded text-center">
-        <h3 class="font-bold text-lg mb-2">2. Kiểm tra đầu vào</h3>
-        <p>Học sinh được kiểm tra trình độ để xếp lớp phù hợp.</p>
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-bold text-green-600 mb-2">Tiếng Anh Tiểu học</h3>
+        <p class="text-gray-600">Tăng cường ngữ âm, từ vựng và phản xạ giao tiếp.</p>
       </div>
-      <div class="bg-white p-6 shadow rounded text-center">
-        <h3 class="font-bold text-lg mb-2">3. Bắt đầu học</h3>
-        <p>Tham gia các lớp học chất lượng cao cùng giáo viên giàu kinh nghiệm.</p>
-      </div>
-      <div class="bg-white p-6 shadow rounded text-center">
-        <h3 class="font-bold text-lg mb-2">4. Theo dõi & báo cáo</h3>
-        <p>Trung tâm theo dõi tiến độ học tập và gửi báo cáo định kỳ cho phụ huynh.</p>
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-bold text-blue-600 mb-2">Luyện thi Cambridge</h3>
+        <p class="text-gray-600">Lộ trình luyện Starters, Movers, Flyers chuyên sâu.</p>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-gray-100 text-center py-6 text-sm text-gray-500">
-    © 2025 Trung tâm Ngoại ngữ Ms Trang – Thiết kế bởi Lê Dũng Education
+  <!-- ✨ Ưu điểm nổi bật -->
+  <section class="py-16 px-6 max-w-6xl mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-10 text-purple-600">Tại sao phụ huynh chọn Ms Trang?</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+      <div class="p-6 bg-white shadow rounded-lg">
+        <h3 class="font-bold text-lg text-orange-600 mb-2">Giáo viên tận tâm</h3>
+        <p class="text-gray-600 text-sm">Đội ngũ giáo viên trẻ, chuyên môn vững vàng, yêu trẻ.</p>
+      </div>
+      <div class="p-6 bg-white shadow rounded-lg">
+        <h3 class="font-bold text-lg text-green-600 mb-2">Lớp học sôi động</h3>
+        <p class="text-gray-600 text-sm">Phương pháp học hiện đại, trò chơi, phản xạ tự nhiên.</p>
+      </div>
+      <div class="p-6 bg-white shadow rounded-lg">
+        <h3 class="font-bold text-lg text-blue-600 mb-2">Theo dõi sát sao</h3>
+        <p class="text-gray-600 text-sm">Báo cáo tiến độ học tập, thông báo chuyên cần.</p>
+      </div>
+      <div class="p-6 bg-white shadow rounded-lg">
+        <h3 class="font-bold text-lg text-pink-600 mb-2">Phản hồi phụ huynh</h3>
+        <p class="text-gray-600 text-sm">Zalo OA kết nối nhanh, chăm sóc học sinh tận tâm.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🔄 Bộ 4 bước -->
+  <section class="bg-pink-50 py-16 px-6">
+    <h2 class="text-3xl font-bold text-center mb-10 text-pink-600">Quy trình học tại trung tâm</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+      <div class="bg-white p-6 rounded-xl shadow text-center">
+        <h3 class="text-lg font-bold text-pink-500 mb-2">1. Đăng ký</h3>
+        <p class="text-sm text-gray-600">Phụ huynh ghi danh tại trung tâm hoặc qua Zalo OA.</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow text-center">
+        <h3 class="text-lg font-bold text-pink-500 mb-2">2. Xếp lớp</h3>
+        <p class="text-sm text-gray-600">Học sinh được kiểm tra đầu vào và phân lớp phù hợp.</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow text-center">
+        <h3 class="text-lg font-bold text-pink-500 mb-2">3. Bắt đầu học</h3>
+        <p class="text-sm text-gray-600">Tham gia lớp học chính khóa, chấm công từng buổi.</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow text-center">
+        <h3 class="text-lg font-bold text-pink-500 mb-2">4. Theo dõi & báo cáo</h3>
+        <p class="text-sm text-gray-600">Trung tâm cập nhật thông tin đến phụ huynh hàng tháng.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 📞 Liên hệ -->
+  <section id="contact" class="bg-yellow-100 py-12 px-6 text-center">
+    <h2 class="text-2xl font-bold text-yellow-700 mb-4">Liên hệ với chúng tôi</h2>
+    <p class="mb-2">📍 Địa chỉ: Xóm 6, xã Sơn Cẩm, TP Thái Nguyên</p>
+    <p class="mb-2">📞 Hotline: 0988 123 456</p>
+    <p class="mb-2">📨 Zalo OA: @MsTrangEnglish</p>
+  </section>
+
+  <!-- ⚙️ Footer -->
+  <footer class="text-center text-sm text-gray-500 py-6 bg-white border-t">
+    © 2025 Trung tâm Ngoại ngữ Ms Trang – Công ty TNHH Lê Dũng Education
   </footer>
 
 </body>
