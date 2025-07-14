@@ -1,4 +1,5 @@
 User-agent: *
-Disallow:
+Disallow: /admin/
+Allow: /
 
 Sitemap: https://mstrang.edu.vn/sitemap.xml
