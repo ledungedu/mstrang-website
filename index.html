@@ -19,22 +19,27 @@
 </header>
 
   <!-- 🌟 HERO - Banner -->
-  <section class="relative w-full">
-    <img src="banner.jpg" alt="Banner Ms Trang" class="w-full h-[500px] object-cover brightness-90">
-    <div class="absolute inset-0 flex items-center px-8 sm:px-20">
-      <div>
-        <h1 class="text-4xl sm:text-5xl font-bold text-orange-600 mb-4 leading-tight">
-          Hành trình học tiếng Anh <br> bắt đầu từ đây
-        </h1>
-        <p class="text-lg text-gray-800 mb-6 max-w-xl">
-          Chúng tôi mang đến môi trường học vui vẻ, hiệu quả cho trẻ từ 4–15 tuổi
-        </p>
-        <a href="#courses" class="inline-block bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition">
-          Xem chương trình học
-        </a>
-      </div>
+<section class="relative w-full h-[500px] overflow-hidden">
+  <!-- Banner mờ -->
+  <img src="banner.jpg" alt="Banner Ms Trang"
+       class="absolute inset-0 w-full h-full object-cover opacity-60 blur-sm">
+
+  <!-- Lớp nền mờ + nội dung -->
+  <div class="relative z-10 h-full flex items-center px-8 sm:px-20">
+    <div>
+      <h1 class="text-4xl sm:text-5xl font-bold text-orange-600 mb-4 leading-tight drop-shadow-md">
+        Hành trình học tiếng Anh <br> bắt đầu từ đây
+      </h1>
+      <p class="text-lg text-gray-800 mb-6 max-w-xl drop-shadow-sm">
+        Chúng tôi mang đến môi trường học vui vẻ, hiệu quả cho trẻ từ 4–15 tuổi
+      </p>
+      <a href="#courses"
+         class="inline-block bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition drop-shadow">
+        Xem chương trình học
+      </a>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- 🏫 GIỚI THIỆU -->
   <section id="about" class="max-w-5xl mx-auto px-4 py-16">
