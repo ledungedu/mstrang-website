@@ -1,41 +1,147 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chuyển đổi số - Chia sẻ code</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #fff8f0;
-            color: #333;
-        }
-        h1 {
-            color: #ff6600;
-        }
-        .download-btn {
-            display: inline-block;
-            background-color: #ff6600;
-            color: white;
-            padding: 12px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .download-btn:hover {
-            background-color: #e55b00;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chuyển đổi số - Ms Trang English Center</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* style nhẹ cho khối code */
+    pre.codeblock { background:#0f172a; color:#e2e8f0; padding:16px; border-radius:10px; overflow:auto; }
+    pre.codeblock code{ font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace; font-size:14px; }
+  </style>
 </head>
-<body>
-    <h1>Chuyển đổi số – Chia sẻ code tự động lấy Access Token Zalo OA</h1>
-    <p>Đây là đoạn code mẫu giúp <b>tự động lấy Access Token Zalo OA</b> vào giờ cố định. 
-    Bạn có thể tải về và áp dụng vào dự án của mình.</p>
+<body class="font-sans bg-orange-50">
 
-    <h2>📥 Tải code</h2>
-    <a class="download-btn" href="code-get-token.zip">Tải file code (.zip)</a>
+  <!-- Header đơn giản (tuỳ muốn giữ hay ẩn) -->
+  <header class="bg-white/80 backdrop-blur sticky top-0 z-50 border-b">
+    <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
+      <h1 class="text-xl sm:text-2xl font-bold text-orange-600">Chuyển đổi số</h1>
+      <a href="index.html" class="text-sm text-gray-600 hover:text-orange-600">← Về trang chủ</a>
+    </div>
+  </header>
 
-    <p><i>Chia sẻ miễn phí, vui lòng dẫn nguồn "mstrang.edu.vn" khi chia sẻ lại.</i></p>
+  <!-- Container co giữa -->
+  <main class="max-w-5xl mx-auto px-4 py-8">
+    <p class="text-gray-700 mb-6">
+      Tổng hợp các bài chia sẻ mã nguồn & hướng dẫn ứng dụng chuyển đổi số tại Ms Trang English Center.
+      Bấm vào tiêu đề để mở/đóng nội dung.
+    </p>
+
+    <!-- ITEM 1: Access Token Zalo OA -->
+    <section class="bg-white rounded-xl shadow overflow-hidden mb-4">
+      <!-- Tiêu đề (click để mở) -->
+      <button
+        class="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-orange-50"
+        data-accordion-btn="#acc-token"
+        aria-expanded="false">
+        <span class="font-semibold text-orange-600">
+          Chia sẻ code tự động lấy Access Token Zalo OA
+        </span>
+        <svg class="w-5 h-5 text-gray-500 transition-transform" data-accordion-icon
+             fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M19 9l-7 7-7-7"/>
+        </svg>
+      </button>
+
+      <!-- Nội dung (ẩn/hiện) -->
+      <div id="acc-token" class="hidden border-t">
+        <div class="p-5 grid gap-5 sm:grid-cols-2">
+          <!-- Ảnh minh hoạ -->
+          <figure class="bg-orange-50 rounded-lg p-3">
+            <!-- thay bằng ảnh của bạn -->
+            <img src="images/token-demo.png" alt="Minh hoạ Access Token"
+                 class="rounded-md w-full h-auto object-cover">
+            <figcaption class="text-sm text-gray-500 mt-2">
+              Minh hoạ quy trình: Scheduler → API Zalo OA → Lưu token
+            </figcaption>
+          </figure>
+
+          <!-- Mô tả + nút tải -->
+          <div>
+            <h3 class="text-lg font-semibold mb-2">Mô tả nhanh</h3>
+            <p class="text-gray-700 mb-4">
+              Đoạn code Node.js dùng làm Netlify Scheduled Function để tự động lấy token Zalo OA
+              theo giờ cố định. Biến môi trường: <code>APP_ID</code>, <code>APP_SECRET</code>,
+              <code>REFRESH_TOKEN</code>.
+            </p>
+
+            <a href="downloads/code-get-token.zip"
+               class="inline-block bg-orange-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-orange-600">
+              📥 Tải file code (.zip)
+            </a>
+
+            <p class="text-xs text-gray-500 mt-3">
+              Chia sẻ miễn phí – vui lòng dẫn nguồn “mstrang.edu.vn” khi chia sẻ lại.
+            </p>
+          </div>
+        </div>
+
+        <!-- Khối code mẫu -->
+        <div class="px-5 pb-6">
+          <h4 class="font-semibold mb-2">Code mẫu (rút gọn)</h4>
+          <pre class="codeblock"><code>// netlify/functions/get-token.js
+export async function handler() {
+  try {
+    const res = await fetch("https://oauth.zaloapp.com/v4/oa/access_token", {
+      method: "POST",
+      headers: {"Content-Type":"application/json"},
+      body: JSON.stringify({
+        app_id: process.env.APP_ID,
+        app_secret: process.env.APP_SECRET,
+        refresh_token: process.env.REFRESH_TOKEN
+      })
+    });
+    const data = await res.json();
+    // TODO: lưu data.access_token vào nơi bạn muốn (KV/Redis/Sheets)
+    return { statusCode: 200, body: JSON.stringify({ ok: true, data }) };
+  } catch (e) {
+    return { statusCode: 500, body: JSON.stringify({ ok: false, error: e.message }) };
+  }
+}</code></pre>
+
+          <pre class="codeblock"><code># netlify.toml
+[functions."get-token"]
+  schedule = "0 23,11 * * *"  # 6h sáng & 6h tối VN (UTC+7)</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- ITEM 2: ví dụ bài khác (để mở rộng sau) -->
+    <section class="bg-white rounded-xl shadow overflow-hidden mb-4">
+      <button class="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-orange-50"
+              data-accordion-btn="#acc-qr" aria-expanded="false">
+        <span class="font-semibold text-orange-600">Tạo QR động cho chiến dịch tuyển sinh (sắp ra mắt)</span>
+        <svg class="w-5 h-5 text-gray-500 transition-transform" data-accordion-icon
+             fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M19 9l-7 7-7-7"/>
+        </svg>
+      </button>
+      <div id="acc-qr" class="hidden border-t">
+        <div class="p-5 text-gray-600">Nội dung sẽ cập nhật…</div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="text-center text-sm text-gray-500 py-8">
+    © 2025 Ms Trang English Center
+  </footer>
+
+  <!-- Script accordion nhỏ gọn -->
+  <script>
+    document.querySelectorAll("[data-accordion-btn]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const target = document.querySelector(btn.getAttribute("data-accordion-btn"));
+        const icon = btn.querySelector("[data-accordion-icon]");
+        const expanded = btn.getAttribute("aria-expanded") === "true";
+        btn.setAttribute("aria-expanded", String(!expanded));
+        target.classList.toggle("hidden");
+        icon?.classList.toggle("rotate-180");
+      });
+    });
+  </script>
 </body>
 </html>
